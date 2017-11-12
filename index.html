@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Hello World!</title>
+
+		<link rel="stylesheet" type="text/css" href="./assets/styles/goose.css">
+	</head>
+	<body>
+		
+		<div class="container">
+			<div class="image">
+				<h4 class="state"> GOOSE </h4>
+			</div>
+		</div>
+		<script>
+			// You can also require other files to run in this process
+			//require('./renderer.js');
+			const {BrowserWindow} = require('electron').remote;
+
+			const sendNotification = () => {
+				return new Notification('Goose Alert', {
+					body: "I have been stolen !!!",
+					icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Kanadische_Wildgans_%285747228780%29.jpg/220px-Kanadische_Wildgans_%285747228780%29.jpg'
+				});
+			}
+
+			console.log(BrowserWindow);
+			const win = BrowserWindow.getFocusedWindow();
+			
+			sendNotification();
+				
+		</script>
+	</body>
+</html>
